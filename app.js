@@ -2,20 +2,20 @@ const container = document.getElementById("container");
 container.style.width = "800px";
 container.style.height = "800px";
 
-for (let i =  1; i < 16; i++) {
-    const squareColumn = document.createElement("div");
-    squareColumn.style.width = "50px";
-    squareColumn.style.height = "50px";
-    squareColumn.classList.add("squareColumn");
-    container.append(squareColumn);
+const userNumber = "16";
 
-    for (let x = 1; x <= 16; x++) {
-        const squareRow = document.createElement("div");
-        squareRow.style.width = "50px";
+for (let i =  1; i < (userNumber ** 2); i++) {
+    const squares = document.createElement("div");
+    squares.style.width = container.style.width / userNumber;
+    squares.style.height = squares.style.width;
+    // squares.classList.add("squares");
+    container.append(squares);
+
+    /*;
         squareRow.style.height = "50px";
         squareRow.classList.add("squareRow");
         container.append(squareRow);
-    }
+    }*/
 }
 
 const button = document.querySelector("button");

@@ -7,6 +7,7 @@ html, body {
 #container {
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
 }
 
 #container div {
@@ -15,6 +16,6 @@ html, body {
     border: 1px solid black;
 }
 
-.squareColumn {
+/*.squares {
     flex-direction: column;
-}
+}*/
