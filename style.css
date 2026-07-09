@@ -7,15 +7,9 @@ html, body {
 #container {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 #container div {
-    display: flex;
-    flex: auto;
     border: 1px solid black;
 }
-
-/*.squares {
-    flex-direction: column;
-}*/
