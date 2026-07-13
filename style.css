@@ -13,3 +13,7 @@ html, body {
 #container div {
     box-shadow: 0 0 0 1px black;
 }
+
+.newClass:hover {
+    background-color: yellow;
+}

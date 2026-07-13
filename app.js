@@ -8,13 +8,16 @@ for (let i =  0; i < (userNumber ** 2); i++) {
     const squares = document.createElement("div");
     squares.style.width = `${parseInt(container.style.width)/userNumber}px`;
     squares.style.height = `${parseInt(container.style.height)/userNumber}px`;
-    // squares.classList.add("squares");
     console.log(squares.style.width);
     container.append(squares);
 }
 
-const button = document.querySelector("button");
+squares.addEventListener("onmouseenter", () => {
+    squares.classList.add(newClass);
+});
 
-/* button.addEventListener("click", (event) => {
+/* const button = document.querySelector("button");
+
+button.addEventListener("click", (event) => {
     container.append(square);
 }) */
