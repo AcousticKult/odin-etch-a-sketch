@@ -16,5 +16,6 @@ My learnings from this project include:
 Here is a list of resources I used to build this project:
 
 * [README Template](https://github.com/othneildrew/Best-README-Template)
+* [CSS Hover FX](https://ianlunn.github.io/Hover/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
