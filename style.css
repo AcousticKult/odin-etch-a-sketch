@@ -14,6 +14,6 @@ html, body {
     box-shadow: 0 0 0 1px black;
 }
 
-.newClass:hover {
+.newClass {
     background-color: yellow;
 }
