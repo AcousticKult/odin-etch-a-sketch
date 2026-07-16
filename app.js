@@ -7,7 +7,7 @@ container.style.height = "800px";
 let userNumber = 16;
 
 createSquares(userNumber);
-addClassList();
+addHoverEffect();
 
 function createSquares(userNumber) {
     for (let i =  0; i < (userNumber ** 2); i++) {
@@ -18,23 +18,25 @@ function createSquares(userNumber) {
     };
 };
 
-function addClassList() {
+function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
-            child.classList.add("newClass");
+            child.classList.add("hoverEffect");
         });
     };
 };
 
+// create button for user input
 const button = document.querySelector("button");
 button.addEventListener("click", handleButtonClick);
 
+// create user feedback display
 let result = document.createElement("p");
 
 function handleButtonClick() {
     let userInput = prompt("Give me a number between 1 - 100.");
 
-    if (userInput === null) {
+    if (userInput === null || isNaN(userInput)) {
         result.textContent = "OK, maybe next time.";
         buttonDiv.append(result);
     } else if (userInput.toLowerCase() === "") {
@@ -45,10 +47,11 @@ function handleButtonClick() {
         buttonDiv.append(result);
     } else {
         userNumber = parseInt(userInput);
+        console.log(userNumber);
 
         container.replaceChildren();
         createSquares(userNumber);
-        addClassList();
+        addHoverEffect();
         
         result.textContent = "";
     }
