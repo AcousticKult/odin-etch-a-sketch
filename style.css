@@ -25,6 +25,10 @@ html, body {
     color: yellow;
 }
 
+.hoverEffect {
+    background-color: rgb(255, 255, 0);
+}
+
 #buttonDiv {
     margin: 20px;
 }
@@ -38,13 +42,8 @@ button {
 #container {
     display: flex;
     flex-wrap: wrap;
-    /* border: 1px solid black; */
 }
 
 #container div {
     box-shadow: 0 0 0 1px black;
-}
-
-.hoverEffect {
-    background-color: yellow;
 }

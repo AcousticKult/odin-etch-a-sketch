@@ -18,10 +18,21 @@ function createSquares(userNumber) {
     };
 };
 
+function getRandomIntInclusive(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+};
+
+function getRandomColor() {
+    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} )`
+};
+
 function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
-            child.classList.add("hoverEffect");
+            // child.classList.add("hoverEffect");
+            child.style.backgroundColor = getRandomColor();
         });
     };
 };
