@@ -14,6 +14,7 @@ function createSquares(userNumber) {
         const squares = document.createElement("div");
         squares.style.width = `${parseInt(container.style.width)/userNumber}px`;
         squares.style.height = `${parseInt(container.style.height)/userNumber}px`;
+        squares.style.opacity = "0.1";
         container.append(squares);
     };
 };
@@ -25,14 +26,21 @@ function getRandomIntInclusive(min, max) {
 };
 
 function getRandomColor() {
-    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} )`
+    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)})`
 };
 
+function increaseOpacity(element) {
+    // increase opacity by 0.1 (10%)
+    return `${element.style.opacity} + 0.1`;
+};
+
+// add hover colour effect and change opacity in 10 interactions
 function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
             // child.classList.add("hoverEffect");
             child.style.backgroundColor = getRandomColor();
+            increaseOpacity(child);
         });
     };
 };
