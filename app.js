@@ -25,13 +25,12 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
 
-function getRandomColor() {
-    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)})`
+function increaseByTenPercent(value) {
+    return parseFloat(value) * 1.1;
 };
 
-function increaseOpacity(element) {
-    // increase opacity by 0.1 (10%)
-    return `${element.style.opacity} + 0.1`;
+function getRandomColor() {
+    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} / 100%)`
 };
 
 // add hover colour effect and change opacity in 10 interactions
@@ -40,7 +39,7 @@ function addHoverEffect() {
         child.addEventListener("mouseenter", () => {
             // child.classList.add("hoverEffect");
             child.style.backgroundColor = getRandomColor();
-            increaseOpacity(child);
+            // increaseOpacity(child);
         });
     };
 };
