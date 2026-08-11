@@ -29,8 +29,8 @@ function increaseByTenPercent(value) {
     return parseFloat(value) * 1.1;
 };
 
-function getRandomColor() {
-    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} / 100%)`
+function getRandomColor(opacityValue) {
+    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} / ${increaseByTenPercent(opacityValue)}%)`
 };
 
 // add hover colour effect and change opacity in 10 interactions
@@ -38,8 +38,10 @@ function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
             // child.classList.add("hoverEffect");
-            child.style.backgroundColor = getRandomColor();
-            // increaseOpacity(child);
+            let value = child.style.opacity;
+            child.style.backgroundColor = getRandomColor(value);
+            console.log(getRandomColor());
+            console.log(parseFloat(value));
         });
     };
 };
