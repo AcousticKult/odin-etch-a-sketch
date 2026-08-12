@@ -14,6 +14,7 @@ function createSquares(userNumber) {
         const squares = document.createElement("div");
         squares.style.width = `${parseInt(container.style.width)/userNumber}px`;
         squares.style.height = `${parseInt(container.style.height)/userNumber}px`;
+        // squares.classList.add("whiteColor");
         squares.style.opacity = "0.1";
         container.append(squares);
     };
@@ -25,12 +26,12 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
 
-function increaseByTenPercent(value) {
-    return parseFloat(value) * 1.1;
+function increaseDarkenEffect(value) {
+    return parseFloat(value) += 0.1;
 };
 
-function getRandomColor(opacityValue) {
-    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} / ${increaseByTenPercent(opacityValue)}%)`
+function getRandomColor() {
+    return `rgb(${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)} ${getRandomIntInclusive(0, 255)})`
 };
 
 // add hover colour effect and change opacity in 10 interactions
@@ -38,10 +39,19 @@ function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
             // child.classList.add("hoverEffect");
-            let value = child.style.opacity;
-            child.style.backgroundColor = getRandomColor(value);
+            
+            // opacity
+            let opacityValue = child.style.opacity;
+            let newValue = increaseDarkenEffect(opacityValue);
+            // update child.style.opacity;
+            opacityValue = newValue;
+            
+            // random color
+            child.style.backgroundColor = getRandomColor();
+            
+            // console.logs
             console.log(getRandomColor());
-            console.log(parseFloat(value));
+            console.log(parseFloat(opacityValue));
         });
     };
 };
