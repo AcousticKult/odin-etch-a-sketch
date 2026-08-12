@@ -27,7 +27,7 @@ function getRandomIntInclusive(min, max) {
 };
 
 function increaseDarkenEffect(value) {
-    return parseFloat(value) += 0.1;
+    return parseFloat(value) + 0.1;
 };
 
 function getRandomColor() {
@@ -42,10 +42,12 @@ function addHoverEffect() {
             
             // opacity
             let opacityValue = child.style.opacity;
-            let newValue = increaseDarkenEffect(opacityValue);
-            // update child.style.opacity;
-            opacityValue = newValue;
-            
+            if (opacityValue < 1) {
+                let newValue = increaseDarkenEffect(opacityValue);
+                // update child.style.opacity;
+                child.style.opacity = newValue;
+            };
+
             // random color
             child.style.backgroundColor = getRandomColor();
             
