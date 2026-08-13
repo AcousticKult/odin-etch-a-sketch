@@ -4,7 +4,9 @@
 This is the fourth project from [The Odin Project's Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations), titled ['Etch-A-Sketch'](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
 My learnings from this project include:
-* 
+* DOM manipulation and events
+* Using loops to repeat actions
+* Working with different return values from multiple functions
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
