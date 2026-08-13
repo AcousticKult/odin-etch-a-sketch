@@ -14,7 +14,6 @@ function createSquares(userNumber) {
         const squares = document.createElement("div");
         squares.style.width = `${parseInt(container.style.width)/userNumber}px`;
         squares.style.height = `${parseInt(container.style.height)/userNumber}px`;
-        // squares.classList.add("whiteColor");
         squares.style.opacity = "0.1";
         container.append(squares);
     };
@@ -38,22 +37,17 @@ function getRandomColor() {
 function addHoverEffect() {
     for (const child of container.children) {
         child.addEventListener("mouseenter", () => {
-            // child.classList.add("hoverEffect");
             
             // opacity
             let opacityValue = child.style.opacity;
             if (opacityValue < 1) {
                 let newValue = increaseDarkenEffect(opacityValue);
-                // update child.style.opacity;
                 child.style.opacity = newValue;
             };
 
             // random color
             child.style.backgroundColor = getRandomColor();
             
-            // console.logs
-            console.log(getRandomColor());
-            console.log(parseFloat(opacityValue));
         });
     };
 };
@@ -79,7 +73,6 @@ function handleButtonClick() {
         buttonDiv.append(result);
     } else {
         userNumber = parseInt(userInput);
-        console.log(userNumber);
 
         container.replaceChildren();
         createSquares(userNumber);

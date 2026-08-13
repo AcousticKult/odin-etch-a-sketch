@@ -25,14 +25,6 @@ html, body {
     color: yellow;
 }
 
-.whiteColor {
-    background: rgb(255, 255, 255 / 10%);
-}
-
-.hoverEffect {
-    background-color: rgb(255, 255, 0);
-}
-
 #buttonDiv {
     margin: 20px;
 }
